@@ -1,0 +1,473 @@
+body {
+  /* background: radial-gradient(#1c1c2b, #050505); removed to match global black theme */
+  overflow: hidden;
+  /* Disable scroll */
+}
+
+.book-scene {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 40px;
+  z-index: 1;
+  background: url("/junior-bg.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Hover Zones for Navigation */
+.hover-area {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.hover-area.left {
+  left: 0;
+}
+
+.hover-area.right {
+  right: 0;
+}
+
+.kids {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+/* .kids img removed as replaced by 3D component */
+
+.kids h2 {
+  margin-top: 20px;
+  color: #ff6b6b;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-12px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.real-book {
+  /* box-shadow removed */
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.page {
+  position: relative;
+  background: #fffdf5;
+  /* Warm paper color */
+  padding: 50px;
+  font-size: 18px;
+  font-family: "Georgia", serif;
+  color: #2b2b2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.2);
+  border: 3px solid #d4a574;
+  box-sizing: border-box;
+}
+
+.blank-page {
+  background: #fafafa !important;
+}
+
+/* 3D Book Thickness - Right Side Pages */
+.page:nth-child(odd):after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -5px;
+  /* Thickness width */
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to right, #e2e2e2, #dadada);
+  transform: skewY(1deg);
+  /* Slight perspective skew */
+  transform-origin: left;
+}
+
+/* 3D Book Thickness - Left Side Pages */
+.page:nth-child(even):before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to left, #e2e2e2, #dadada);
+  transform: skewY(-1deg);
+  transform-origin: right;
+}
+
+.cover {
+  background: url("/kids-book-cover.png");
+  background-size: cover;
+  background-position: center;
+  border: 4px solid #5d4037;
+  /* Leather-look border */
+  box-shadow: inset 0 0 40px rgba(0, 0, 0, 0.5);
+  /* Inner Vignette */
+}
+
+/* Hide text content on cover since image has title */
+.cover-content {
+  display: none;
+}
+
+.page-content {
+  text-align: center;
+  width: 100%;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.page-title {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.main-heading {
+  font-size: 52px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #333;
+  font-family: serif;
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #666;
+  font-style: italic;
+  margin-top: 15px;
+}
+
+.decorative-line {
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(to right, transparent, #333, transparent);
+  margin: 20px auto;
+}
+
+.squirrel-circle {
+  width: 140px;
+  height: 140px;
+  background: #fff9e6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 70px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quote {
+  color: #666;
+  font-style: italic;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.stat-item {
+  background: #f0f8ff;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: bold;
+  color: #4a90e2;
+  font-size: 16px;
+}
+
+.page-icon {
+  font-size: 100px;
+  margin-bottom: 20px;
+}
+
+/* Heading Pages */
+.page-heading {
+  background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+}
+
+.page-heading.page-purple {
+  background: linear-gradient(135deg, #f5f0ff 0%, #fff 100%);
+}
+
+.page-heading.page-green {
+  background: linear-gradient(135deg, #f0fff4 0%, #fff 100%);
+}
+
+.page-heading.page-orange {
+  background: linear-gradient(135deg, #fff5e6 0%, #fff 100%);
+}
+
+.page-heading.page-blue {
+  background: linear-gradient(135deg, #e6f7ff 0%, #fff 100%);
+}
+
+/* Description Pages */
+.page-description {
+  background: #fafafa;
+}
+
+.description-text {
+  color: #555;
+  line-height: 1.8;
+  font-size: 16px;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.mission-box {
+  background: linear-gradient(135deg, #fff9e6 0%, #ffe6cc 100%);
+  padding: 20px;
+  border-radius: 12px;
+  margin-top: 25px;
+  border-left: 4px solid #ff9800;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Image Grid */
+.image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.image-placeholder {
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: #1976d2;
+  font-size: 18px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Facility List */
+.facility-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.facility-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+}
+
+.facility-item:hover {
+  transform: translateX(5px);
+}
+
+.facility-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.facility-item strong {
+  display: block;
+  color: #27ae60;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.facility-item p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Brochure List */
+.brochure-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.brochure-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.brochure-item:hover {
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.brochure-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.brochure-item strong {
+  display: block;
+  color: #ff9800;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.brochure-item p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Contact Info */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.contact-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.contact-item strong {
+  display: block;
+  color: #2196f3;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.contact-item p {
+  color: #666;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Color Themes */
+.page-purple .page-title {
+  color: #9b59b6;
+}
+
+.page-green .page-title {
+  color: #27ae60;
+}
+
+.page-red .page-title {
+  color: #e74c3c;
+}
+
+.page-orange .page-title {
+  color: #ff9800;
+}
+
+.page-blue .page-title {
+  color: #2196f3;
+}
+
+.page-gray {
+  background: linear-gradient(135deg, #f5f5f5 0%, #fff 100%);
+}
+
+.page-gray .page-title {
+  color: #7f8c8d;
+}
+
+.page p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 18px;
+}
+
+/* Page Numbers */
+.page-number {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #999;
+  font-family: "Georgia", serif;
+  font-style: italic;
+}
+
+/* Last Page with Zoom Animation */
+.page-last {
+  background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+  color: gold !important;
+  animation: zoom 2s forwards;
+}
+
+.page-last .page-title {
+  color: gold !important;
+}
+
+.page-last p {
+  color: #f0e68c !important;
+}
+
+.page-last .page-number {
+  color: gold !important;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.1);
+  }
+}
