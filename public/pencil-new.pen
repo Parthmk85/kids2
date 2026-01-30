@@ -1,0 +1,130 @@
+{
+  "version": "2.6",
+  "children": [
+    {
+      "type": "frame",
+      "id": "bi8Au",
+      "x": 0,
+      "y": 0,
+      "name": "Frame",
+      "clip": true,
+      "width": 1920,
+      "height": 1080,
+      "fill": "#ffffff00",
+      "layout": "none",
+      "children": [
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "ihmRX",
+          "x": 801,
+          "y": 746,
+          "fill": "#000000ff",
+          "width": 317,
+          "height": 105,
+          "stroke": {
+            "align": "center",
+            "thickness": 10,
+            "fill": "#6a6767ff"
+          },
+          "effect": [
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#00000040",
+              "offset": {
+                "x": 0,
+                "y": 4
+              },
+              "blur": 4
+            },
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#00000040",
+              "offset": {
+                "x": 0,
+                "y": 4
+              },
+              "blur": 4
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "HvHGw",
+          "x": 867,
+          "y": 604,
+          "fill": "#000000ff",
+          "width": 186,
+          "height": 195,
+          "stroke": {
+            "align": "center",
+            "thickness": 10,
+            "fill": "#6a6767ff"
+          },
+          "effect": [
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#00000040",
+              "offset": {
+                "x": 0,
+                "y": 4
+              },
+              "blur": 4
+            },
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#00000040",
+              "offset": {
+                "x": 0,
+                "y": 4
+              },
+              "blur": 4
+            }
+          ]
+        },
+        {
+          "type": "rectangle",
+          "cornerRadius": 10,
+          "id": "nBid0",
+          "x": 80,
+          "y": 47,
+          "fill": "#000000ff",
+          "width": 1760,
+          "height": 685,
+          "stroke": {
+            "align": "center",
+            "thickness": 10,
+            "fill": "#6a6767ff"
+          },
+          "effect": [
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#00000040",
+              "offset": {
+                "x": 0,
+                "y": 4
+              },
+              "blur": 4
+            },
+            {
+              "type": "shadow",
+              "shadowType": "outer",
+              "color": "#00000040",
+              "offset": {
+                "x": 0,
+                "y": 4
+              },
+              "blur": 4
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

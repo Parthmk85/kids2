@@ -1,5 +1,5 @@
-import PortalSelector from "@/components/PortalSelector";
+import LandingPencil from "@/components/LandingPencil";
 
 export default function Home() {
-  return <PortalSelector />;
+  return <LandingPencil />;
 }
